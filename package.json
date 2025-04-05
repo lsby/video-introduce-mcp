@@ -1,0 +1,49 @@
+{
+  "name": "playground-revideo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:all": "npm run check:format && npm run check:lint && npm run check:type",
+    "check:format": "prettier --write .",
+    "check:lint": "eslint . --fix",
+    "check:type": "tsc --noEmit",
+    "check:type:watch": "tsc --noEmit -w",
+    "prepare": "husky",
+    "render": "tsc && node dist/src/render.js",
+    "start": "revideo editor --projectFile ./src/project.tsx"
+  },
+  "dependencies": {
+    "@lezer/javascript": "^1.4.21",
+    "@preact/signals": "^2.0.1",
+    "@revideo/2d": "0.10.3",
+    "@revideo/core": "0.10.3",
+    "@revideo/renderer": "0.10.3",
+    "axios": "^1.7.9",
+    "preact": "^10.25.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@lsby/eslint-config": "^0.2.21",
+    "@lsby/eslint-plugin": "^0.0.11",
+    "@revideo/cli": "0.10.3",
+    "@revideo/ui": "0.10.3",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.5.5",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^50.2.4",
+    "eslint-plugin-react": "^7.36.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-sort-class-members": "^1.20.0",
+    "husky": "^9.1.6",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "typescript": "<5.6.0",
+    "typescript-eslint": "8.7.0",
+    "vitest": "^2.1.1"
+  },
+  "packageManager": "npm@10.8.2"
+}
