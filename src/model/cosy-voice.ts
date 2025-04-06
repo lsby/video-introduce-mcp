@@ -51,18 +51,7 @@ export class CosyVoice {
     let 请求结果 = await axios.post(
       `${this.服务器地址}/gradio_api/call/generate_audio`,
       {
-        data: [
-          文本,
-          选择,
-          预训练音色,
-          提示音文本,
-          null,
-          提示音,
-          选项?.指导 ?? '',
-          选项?.种子 ?? 0,
-          false,
-          选项?.语速 ?? 1,
-        ],
+        data: [文本, 选择, 预训练音色, 提示音文本, null, 提示音, 选项?.指导 ?? '', 选项?.种子 ?? 0, false, 选项?.语速 ?? 1],
       },
       { headers: { 'Content-Type': 'application/json' } },
     )

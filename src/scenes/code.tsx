@@ -8,11 +8,7 @@ export let 代码 = makeScene2D('代码', function* (view) {
   view.add(
     <>
       <Rect fill={'black'} width={'100%'} height={'100%'}></Rect>
-      <Code
-        highlighter={new LezerHighlighter(parser.configure({ dialect: 'jsx ts' }))}
-        fontSize={200}
-        code={'let number = 7;'}
-      />
+      <Code highlighter={new LezerHighlighter(parser.configure({ dialect: 'jsx ts' }))} fontSize={200} code={'let number = 7;'} />
     </>,
   )
   yield* waitFor(1)
