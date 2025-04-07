@@ -3,7 +3,7 @@ import { Promisable, ThreadGenerator, createRef, waitFor } from '@revideo/core'
 import { z } from 'zod'
 import { CosyVoice } from '../model/cosy-voice'
 
-let cosyVoice = new CosyVoice('http://127.0.0.1:8000', {
+let cosyVoice = new CosyVoice('http://127.0.0.1:8001', {
   模式: '预训练',
   音色: '中文女',
 })
@@ -52,7 +52,7 @@ export function* tts(
 
   let 音频引用 = createRef<Audio>()
   yield view.add(<Audio src={语音地址} play={true} ref={音频引用} />)
-  yield view.add(<Txt text={文本} textWrap={true} textAlign={'center'}></Txt>)
+  yield view.add(<Txt text={文本} textWrap={true} textAlign={'center'} fill={'white'}></Txt>)
   yield* waitFor(音频引用().getDuration())
   yield view.removeChildren()
 }
